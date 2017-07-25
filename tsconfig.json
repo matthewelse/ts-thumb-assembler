@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "bin",
+    "rootDir": "src",
+    "noImplicitAny": true,
+    "declaration": true,
+    "sourceMap": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "thumb-assembler",
+  "version": "1.0.0",
+  "description": "Thumb-2 Assembler in TypeScript",
+  "main": "bin/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewelse/ts-thumb-assembler.git"
+  },
+  "keywords": [
+    "thumb",
+    "arm",
+    "assembler",
+    "typescript"
+  ],
+  "author": "Matthew Else <matthew.else@arm.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/matthewelse/ts-thumb-assembler/issues"
+  },
+  "homepage": "https://github.com/matthewelse/ts-thumb-assembler#readme"
+}
