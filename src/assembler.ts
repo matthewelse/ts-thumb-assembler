@@ -736,7 +736,7 @@ const assemble = (asmLines: string[], wordCallback: (w: number) => void) => {
         },
         undefined,
     );
-    console.log(labels);
+    
     assembleInternal(asmLines, wordCallback, labels);
 };
 
@@ -745,15 +745,19 @@ const assemble = (asmLines: string[], wordCallback: (w: number) => void) => {
 // ---------------------------------------------------------------------------
 
 export const assembleBlock = (asmLines: string[]) => {
-    const machineCode: string[] = [];
+    const machineCode: number[] = [];
     try {
         assemble(asmLines, (word: number) => {
-            machineCode.push("0x" + word.toString(16));
+            machineCode.push(word);
         });
     } catch (err) {
         console.error("Assembler failed: " + err);
         return undefined;
     }
 
-    return machineCode;
+    if (machineCode.length % 2 == 1) {
+        machineCode.push(0);
+    }
+
+    return new Uint16Array(machineCode);
 };

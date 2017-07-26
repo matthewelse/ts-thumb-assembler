@@ -691,7 +691,6 @@ var assemble = function (asmLines, wordCallback) {
     var labels = assembleInternal(asmLines, function () {
         /* empty */
     }, undefined);
-    console.log(labels);
     assembleInternal(asmLines, wordCallback, labels);
 };
 // ---------------------------------------------------------------------------
@@ -701,13 +700,16 @@ exports.assembleBlock = function (asmLines) {
     var machineCode = [];
     try {
         assemble(asmLines, function (word) {
-            machineCode.push("0x" + word.toString(16));
+            machineCode.push(word);
         });
     }
     catch (err) {
         console.error("Assembler failed: " + err);
         return undefined;
     }
-    return machineCode;
+    if (machineCode.length % 2 == 1) {
+        machineCode.push(0);
+    }
+    return new Uint16Array(machineCode);
 };
 //# sourceMappingURL=assembler.js.map

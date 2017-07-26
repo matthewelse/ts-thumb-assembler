@@ -2,7 +2,8 @@
   "name": "thumb-assembler",
   "version": "1.0.0",
   "description": "Thumb-2 Assembler in TypeScript",
-  "main": "bin/main.js",
+  "typings": "bin/assembler.d.ts",
+  "main": "bin/assembler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
