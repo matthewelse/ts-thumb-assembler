@@ -710,6 +710,6 @@ exports.assembleBlock = function (asmLines) {
     if (machineCode.length % 2 == 1) {
         machineCode.push(0);
     }
-    return new Uint16Array(machineCode);
+    return new Uint32Array(machineCode);
 };
 //# sourceMappingURL=assembler.js.map

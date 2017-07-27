@@ -1,1 +1,1 @@
-export declare const assembleBlock: (asmLines: string[]) => Uint16Array;
+export declare const assembleBlock: (asmLines: string[]) => Uint32Array;
