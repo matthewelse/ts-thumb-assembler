@@ -759,5 +759,7 @@ export const assembleBlock = (asmLines: string[]) => {
         machineCode.push(0);
     }
 
-    return new Uint32Array(machineCode);
+    const u16 = new Uint16Array(machineCode);
+
+    return new Uint32Array(u16.buffer);
 };
